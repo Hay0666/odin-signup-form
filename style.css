@@ -1,9 +1,111 @@
-@font-face {
-    font-family: 'Telma-Black';
-    src: url('./assets/Telma-Black.woff'); /* Adjust extension if yours is different */
+.form-section {
+    margin: 0 auto;
+    max-width: 600px;
+    /* This container is just a clean block framing your content */
 }
 
-body {
-    background-color: red; /* Just to test the CSS link */
-    font-family: 'Telma-Black', sans-serif; /* Just to test the font */
+.form-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* The grid now correctly controls the inputs inside the card */
+    gap: 1.5rem;
+    
+    background: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* The shadow stays with the background */
+    padding: 2rem;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side {
+  flex: 0 0 35%;
+  background-image: url('./assets/pawel-czerwinski-background.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.right-side {
+  background-color: #d5dde5b6;  
+  flex: 1 1 65%;
+  min-width: 0;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  padding: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* The shadow stays with the background */
+}
+
+.logo-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 20%;
+    top: 15%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Telma-Black', sans-serif;
+    color: rgb(89, 146, 158);
+}
+
+@font-face {
+    font-family: 'Telma-Black';
+    src: url('./assets/Telma-Black.woff') format('woff');
+}
+
+.form-title {
+    grid-column: 1 / span 2; /* Starts at line 1 and spans across 2 columns */
+}
+
+.logo-container img {
+    width: 100px;     /* Scales the logo down to a clean, readable size */
+    height: auto;    /* Maintains the original aspect ratio */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Puts a clean little space between the label and its input box */
+}
+
+.input-group input {
+    width: 100%;       /* Forces the input to fill the entire width of its grid column */
+    padding: 0.6rem;   /* Adds breathing room inside the box so text isn't cramped  */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Swaps the harsh default border for a clean, light one */
+    border-radius: 4px; /* Rounds the corners slightly */
+}
+
+.footer-area button {
+    width: 100%;       /* Forces the input to fill the entire width of its grid column */
+    padding: 0.6rem;   /* Adds breathing room inside the box so text isn't cramped  */
+    border: 1px solid #6993b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Swaps the harsh default border for a clean, light one */
+    border-radius: 4px;
+    background-color: #6993b3;
+    text-align: center;
+    color: white;             /* High contrast text */
+    font-weight: bold;        /* Makes the call-to-action stand out */
+    font-size: 1rem;
+    cursor: pointer;          /* Changes the mouse cursor to a hand on hover */
+}
+
+.input-group input:focus {
+    outline: none;                  /* Removes the browser's default harsh black outline */
+    border-color: #6993b3;          /* Matches your theme color */
+    box-shadow: 0 0 5px rgba(105, 147, 179, 0.5); /* Adds a soft, glowing shadow */
+}
+
+.input-group input:user-invalid {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+}
+
+.top-text {
+    font-weight: bold;
 }
