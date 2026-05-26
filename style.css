@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Telma-Black';
+    src: url('./assets/Telma-Black.woff'); /* Adjust extension if yours is different */
+}
+
+body {
+    background-color: red; /* Just to test the CSS link */
+    font-family: 'Telma-Black', sans-serif; /* Just to test the font */
+}
